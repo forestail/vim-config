@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 06-Mar-2017.
+" Last Change: 08-Mar-2017.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -278,6 +278,8 @@ call dein#add('mattn/emmet-vim')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('twitvim/twitvim')
+call dein#add('deton/jasegment.vim')
+call dein#add('kana/vim-textobj-lastpat')
 
 call dein#end()
 " -------------dein--------------------------------
@@ -373,6 +375,18 @@ set number
 set history=200
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call<SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s,'/\'),'\n','\\n','g')
+  let @s = temp
+endfunction
 
 
 "migemo
