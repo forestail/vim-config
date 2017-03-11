@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 10-Mar-2017.
+" Last Change: 11-Mar-2017.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -263,6 +263,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neoyank.vim')
 call dein#add('Shougo/neocomplcache')
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
